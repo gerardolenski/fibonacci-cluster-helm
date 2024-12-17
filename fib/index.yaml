@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  fib:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-12-17T20:56:19.387123308+01:00"
+    description: An "app-of-apps" Helm chart with Fibonacci applications
+    digest: fb8277903e56ff6d5ce37f196c340f5a1e16cef61474982349cc8b542bf4d843
+    name: fib
+    type: application
+    urls:
+    - fib-1.0.0.tgz
+    version: 1.0.0
+generated: "2024-12-17T20:56:19.386279442+01:00"

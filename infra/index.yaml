@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  infra:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-12-17T20:54:18.14757472+01:00"
+    description: An "app-of-apps" Helm chart with infrastructure services
+    digest: 3e4e064bab510b5860930832f400d1a75606bdc0383bcd2641f559d2903c27d3
+    name: infra
+    type: application
+    urls:
+    - infra-1.0.0.tgz
+    version: 1.0.0
+generated: "2024-12-17T20:54:18.146789742+01:00"
