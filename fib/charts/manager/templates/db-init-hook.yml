@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "manager.fullname" . }}-db-init
+  namespace: {{ .Values.global.namespace }}
+  labels:
+    {{- include "manager.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      name: {{ include "manager.fullname" . }}-db-init
+      labels:
+        {{- include "manager.labels" . | nindent 4 }}
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: db-init-task-manager
+          image: "golenski/db-init:1.0.0"
+          envFrom:
+            - configMapRef:
+                name: "infra"
+            - secretRef:
+                name: "infra"
+          env:
+            - name: POSTGRES_DB_NAME
+              value: "task_manager"
+            - name: POSTGRES_DB_HOST
+              value: "{{ .Values.global.infra.namespace }}-postgres.{{ .Values.global.infra.namespace }}"

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "manager.fullname" . }}
+  namespace: {{ .Values.global.namespace }}
+  labels:
+    {{- include "manager.labels" . | nindent 4 }}
+data:
+  JOB_RESULT_QUEUE_NAME: {{ .Values.config.JOB_RESULT_QUEUE_NAME | quote }}
+  RESULT_LISTENER_CONCURRENCY: {{ .Values.config.RESULT_LISTENER_CONCURRENCY | quote }}
+  POSTGRES_DATASOURCE_URL: "jdbc:postgresql://{{ .Values.global.infra.namespace }}-postgres.{{ .Values.global.infra.namespace }}:5432/task_manager"
+  POSTGRESS_POOL_SIZE: {{ .Values.config.POSTGRES_POOL_SIZE | quote }}
+  POSTGRESS_CONNECTION_TIMEOUT: {{ .Values.config.POSTGRES_CONNECTION_TIMEOUT | quote }}
+  FIB_ALGORITHMS: {{ .Values.config.FIB_ALGORITHMS | quote }}
+  LOGGING_LEVEL: {{ .Values.config.LOGGING_LEVEL | quote }}
+  JVM_OPTS: "-XX:MaxRAMPercentage=75"

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: fib
+description: An "app-of-apps" Helm chart with Fibonacci applications
+type: application
+version: 1.0.0
+appVersion: "1.0.0"

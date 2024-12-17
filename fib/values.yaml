@@ -1,0 +1,10 @@
+global:
+  namespace: fib
+  infra:
+    namespace: infra
+    broker:
+      user: "artemis"
+      password: ""
+    postgres:
+      user: "postgres"
+      password: ""

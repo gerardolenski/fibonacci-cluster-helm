@@ -1,0 +1,15 @@
+global:
+  namespace: infra
+
+postgres:
+  config:
+    POSTGRES_USER: "postgres"
+    POSTGRES_PASSWORD: ""
+pgadmin:
+  config:
+    PGADMIN_DEFAULT_EMAIL: "postgres@postgres.dev"
+    PGADMIN_DEFAULT_PASSWORD: ""
+artemis:
+  config:
+    ARTEMIS_USER: "artemis"
+    ARTEMIS_PASSWORD: ""

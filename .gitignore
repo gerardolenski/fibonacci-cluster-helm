@@ -1,3 +1,5 @@
+config/
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
